@@ -48,9 +48,19 @@ navCntnt[2].textContent = siteContent.nav["nav-item-3"];
 navCntnt[3].textContent = siteContent.nav["nav-item-4"];
 navCntnt[4].textContent = siteContent.nav["nav-item-5"];
 navCntnt[5].textContent = siteContent.nav["nav-item-6"];
-navCntnt.forEach((nav) => nav.style.color = "blue")
+navCntnt.forEach((nav) => nav.style.color = "green")
 const ctaHead = document.querySelector('.cta-text > h1');
 ctaHead.innerHTML = siteContent['cta']['h1'].replace(/ /g, '<br>');
+
+const newNav1 = document.createElement('a');
+newNav1.textContent = "Click - ME!";
+const newNav2 = document.createElement('a');
+newNav2.textContent = 'Dont - Click - Me!';
+const navigation = document.querySelector('nav');
+navigation.prepend(newNav1);
+navigation.append(newNav2);
+newNav2.style.color = 'red';
+newNav1.style.color = 'blue';
 
 const ctaBtn = document.querySelector("button");
 ctaBtn.textContent = siteContent.cta["button"];
