@@ -49,9 +49,8 @@ navCntnt[3].textContent = siteContent.nav["nav-item-4"];
 navCntnt[4].textContent = siteContent.nav["nav-item-5"];
 navCntnt[5].textContent = siteContent.nav["nav-item-6"];
 navCntnt.forEach((nav) => nav.style.color = "blue")
-const ctah1 = document.querySelector("h1");
-ctah1.innerHTML = siteContent.cta["h1"];
-ctah1.style.textAlign = "center"
+const ctaHead = document.querySelector('.cta-text > h1');
+ctaHead.innerHTML = siteContent['cta']['h1'].replace(/ /g, '<br>');
 
 const ctaBtn = document.querySelector("button");
 ctaBtn.textContent = siteContent.cta["button"];
