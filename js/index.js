@@ -48,13 +48,18 @@ navCntnt[3].textContent = siteContent.nav["nav-item-4"];
 navCntnt[4].textContent = siteContent.nav["nav-item-5"];
 navCntnt[5].textContent = siteContent.nav["nav-item-6"];
 navCntnt.forEach((nav) => nav.style.color = "green")
+navCntnt.forEach((itm) => {
+    itm.addEventListener("click", () => {
+        itm.style.color = "pink"
+    })
+});
 const ctaHead = document.querySelector('.cta-text > h1');
 ctaHead.innerHTML = siteContent['cta']['h1'].replace(/ /g, '<br>');
 
 const newNav1 = document.createElement('a');
 newNav1.textContent = "Click - ME!";
 const newNav2 = document.createElement('a');
-newNav2.textContent = 'Dont - Click - Me!';
+newNav2.textContent = 'Dont - Click - ME!';
 const navigation = document.querySelector('nav');
 navigation.prepend(newNav1);
 navigation.append(newNav2);
@@ -63,9 +68,19 @@ newNav1.style.color = 'blue';
 
 const ctaBtn = document.querySelector("button");
 ctaBtn.textContent = siteContent.cta["button"];
+ctaBtn.addEventListener("click", () => {
+    ctaBtn.style.color = "purple";
+    ctaBtn.textContent = "I've Been Clicked!"
+})
 
 const ctaImg = document.querySelector("#cta-img");
 ctaImg.src = siteContent.cta["img-src"];
+ctaImg.addEventListener("mouseenter", () => {
+    ctaImg.style.transform = "scale(1.4)";
+})
+ctaImg.addEventListener("mouseleave", () => {
+    ctaImg.style.transform = "scale(1)";
+})
 
 const doch4 = document.querySelectorAll('.main-content h4');
 doch4[0].innerText = siteContent["main-content"]["features-h4"];
